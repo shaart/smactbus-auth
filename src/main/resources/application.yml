@@ -1,0 +1,28 @@
+server:
+  port: 9000
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.springframework.security.oauth2: INFO
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa.database-platform: org.hibernate.dialect.H2Dialect
+  sql:
+    init:
+      data-locations:
+        - classpath:org/springframework/security/oauth2/server/authorization/oauth2-authorization-schema.sql
+        - classpath:org/springframework/security/oauth2/server/authorization/oauth2-authorization-consent-schema.sql
+        - classpath:org/springframework/security/oauth2/server/authorization/client/oauth2-registered-client-schema.sql
+  h2:
+    console.enabled: true
+
+jwt:
+  secret: secret
