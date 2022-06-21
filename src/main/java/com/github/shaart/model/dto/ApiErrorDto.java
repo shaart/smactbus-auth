@@ -1,4 +1,4 @@
-package com.github.shaart.dto;
+package com.github.shaart.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

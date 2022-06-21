@@ -1,4 +1,4 @@
-package com.github.shaart.dto;
+package com.github.shaart.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class LoginResponseDto {
+public class RegisterRequestDto {
 
-  private String accessToken;
+  private String email;
+  private String password;
 }

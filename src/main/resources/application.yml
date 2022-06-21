@@ -18,11 +18,13 @@ spring:
   sql:
     init:
       data-locations:
-        - classpath:org/springframework/security/oauth2/server/authorization/oauth2-authorization-schema.sql
-        - classpath:org/springframework/security/oauth2/server/authorization/oauth2-authorization-consent-schema.sql
-        - classpath:org/springframework/security/oauth2/server/authorization/client/oauth2-registered-client-schema.sql
+        - classpath:sql/init.sql
   h2:
     console.enabled: true
 
 jwt:
-  secret: secret
+  clientId: smactbus-api
+  client-secret: smactbus-secret
+  access-token-validity-seconds: 100
+  refresh-token-validity-seconds: 2592000 # 30 days
+  authorized-grant-types: password,authorization_code,refresh_token
