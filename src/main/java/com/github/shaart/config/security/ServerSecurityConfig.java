@@ -13,14 +13,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
-//@Order(1)
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, proxyTargetClass = true)
 public class ServerSecurityConfig extends WebSecurityConfigurerAdapter {
 
   private final UserDetailsService userDetailsService;
 
-  public ServerSecurityConfig(@Qualifier("userService") UserDetailsService userDetailsService) {
+  public ServerSecurityConfig(@Qualifier("defaultUserDetailsService") UserDetailsService userDetailsService) {
     this.userDetailsService = userDetailsService;
   }
 
