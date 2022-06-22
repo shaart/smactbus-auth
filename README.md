@@ -5,6 +5,38 @@ By default contains users created via `DatabaseInitializer`:
 - email: "admin@example.com", password: "admin"
 - email: "user@example.com", password: "user"
 
+### JWT
+Sample JWT
+```text
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTU5MzMwNTgsInVzZXJfbmFtZSI6ImFkbWluQGV4YW1wbGUuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJqdGkiOiI0YTgzN2EzNC1jM2ZmLTRhMGQtOTBhMi0wNmU5NzhlODdlNGQiLCJjbGllbnRfaWQiOiJzbWFjdGJ1cy1hcGkiLCJzY29wZSI6WyJyZWFkIl19.cjgCqgqscGjSEo8fAtMqiFGZQAPODlDbTUsdooBV36mJsn1IuNihWR6gAHU9fKQT3GOETN0sjMaQZ_FfeIBqFHocjEM3zao7u0kXn2RRTeo6rXArHMHbtyVQA5b36eyPTkCqkB2-lqQN4O0ew-nczHBAD3Zgbpssz4586NiBS4p-AGs86tCgaynpQiDqmYMX_j6By-q0EGgNwlUJyjg7NaosUbn9tABQYipIzd2DDeSKTaFzkEKcrUNoilhnizbd72lgrt-4W6tCH4UDaBLG-eBvBNiZokIlPR9o954LIqldHTgRdQDCuzUnFTOEaBozG7gK3XRxeb1SwD8mdbMJJw
+```
+
+Sample JWT Decoded
+
+Header
+```json
+{
+  "alg": "RS256",
+  "typ": "JWT"
+}
+```
+
+Payload
+```json
+{
+  "exp": 1655933058,
+  "user_name": "admin@example.com",
+  "authorities": [
+    "ROLE_ADMIN"
+  ],
+  "jti": "4a837a34-c3ff-4a0d-90a2-06e978e87e4d",
+  "client_id": "smactbus-api",
+  "scope": [
+    "read"
+  ]
+}
+```
+
 ### Requests
 Create user
 ```shell
