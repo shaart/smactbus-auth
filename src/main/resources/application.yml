@@ -28,6 +28,8 @@ security:
       token-key-access: permitAll()
       check-token-access: permitAll()
       jwt:
+        access:
+          issuer: http://localhost:9000
         key-store: classpath:smactbus-keystore.jks
         key-password: smactbus
         key-store-password: smactbus
