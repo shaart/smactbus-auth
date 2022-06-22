@@ -22,9 +22,19 @@ spring:
   h2:
     console.enabled: true
 
-jwt:
-  clientId: smactbus-api
-  client-secret: smactbus-secret
-  access-token-validity-seconds: 100
-  refresh-token-validity-seconds: 2592000 # 30 days
-  authorized-grant-types: password,authorization_code,refresh_token
+security:
+  oauth2:
+    authorization:
+      token-key-access: permitAll()
+      check-token-access: permitAll()
+      jwt:
+        key-store: classpath:smactbus-keystore.jks
+        key-password: smactbus
+        key-store-password: smactbus
+        key-alias: smactbus-keystore
+    client:
+      client-id: smactbus-api
+      client-secret: smactbus-secret
+      access-token-validity-seconds: 100
+      refresh-token-validity-seconds: 2592000 # 30 days
+      authorized-grant-types: password,authorization_code,refresh_token
