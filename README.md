@@ -1,6 +1,10 @@
 ### Description
 Spring Security OAuth server app with JWT.
 
+By default contains users created via `DatabaseInitializer`:
+- email: "admin@example.com", password: "admin"
+- email: "user@example.com", password: "user"
+
 ### Requests
 Create user
 ```shell
