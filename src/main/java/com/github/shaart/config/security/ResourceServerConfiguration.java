@@ -34,6 +34,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
         .authorizeRequests()
         .antMatchers("/h2-console", "/h2-console/**").permitAll()
         .antMatchers("/.well-known/jwks.json").permitAll()
+        .antMatchers("/actuator/**").permitAll()
         .antMatchers("/oauth/**").permitAll()
         .antMatchers("/swagger-ui/**", "/swagger-ui.html").permitAll()
         .antMatchers("/api/auth", "/api/auth/**").permitAll()
