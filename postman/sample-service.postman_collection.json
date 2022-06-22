@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "02c23f32-e1e7-4ef8-a89e-e7179340e887",
+		"name": "sample-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4291968"
+	},
+	"item": [
+		{
+			"name": "Get home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{sample_host}}/sample",
+					"host": [
+						"{{sample_host}}"
+					],
+					"path": [
+						"sample"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user's home",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_jwt}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{sample_host}}/sample/api/user",
+					"host": [
+						"{{sample_host}}"
+					],
+					"path": [
+						"sample",
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get admin's home",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_jwt}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{sample_host}}/sample/api/admin",
+					"host": [
+						"{{sample_host}}"
+					],
+					"path": [
+						"sample",
+						"api",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
